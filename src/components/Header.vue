@@ -1,5 +1,5 @@
 <template>
-  <h1>this is header component</h1>
+  <h1 class="header">this is header component</h1>
 </template>
 
 <script>
@@ -8,4 +8,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.header {
+  background-color: darkblue;
+  color: white;
+}
+</style>
