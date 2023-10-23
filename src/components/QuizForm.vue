@@ -37,6 +37,25 @@
               </div>
             </div>
           </div>
+          <div class="section">
+            <div class="form-group">
+              <div class="col">
+                <label for="male">male</label>
+                <input type="radio" id="male" value="1" v-model="quiz.gender" />
+                <label for="name">female</label>
+                <input type="radio" value="2" v-model="quiz.gender" />
+              </div>
+            </div>
+            <select multiple v-model="quiz.selected">
+              <option
+                v-for="option in selectOptions"
+                :key="option.id"
+                :value="option.id"
+              >
+                {{ option.name }}
+              </option>
+            </select>
+          </div>
           <div class="section options">
             <p>
               What sort of creative work do you need help with? You can read
@@ -140,6 +159,8 @@ export default {
         email: "",
         desc: "begin",
         jobs: [],
+        gender: "",
+        selected: [],
       },
       error: {
         text: "",
@@ -150,6 +171,32 @@ export default {
         status: false,
       },
       jobOptions: [
+        {
+          id: 1,
+          name: "Branding",
+        },
+        {
+          id: 2,
+          name: "Strategy",
+        },
+        {
+          id: 3,
+          name: "Motion Design",
+        },
+        {
+          id: 4,
+          name: "Development",
+        },
+        {
+          id: 5,
+          name: "Product Design",
+        },
+        {
+          id: 6,
+          name: "Marketing",
+        },
+      ],
+      selectOptions: [
         {
           id: 1,
           name: "Branding",
