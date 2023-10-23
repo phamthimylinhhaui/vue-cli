@@ -44,14 +44,7 @@
             </p>
             <div class="row">
               <div class="col-4" v-for="option in jobOptions" :key="option.id">
-                <div
-                  class="block"
-                  :style="{
-                    backgroundColor: quiz.jobs.includes(option.id)
-                      ? 'var(--primary)'
-                      : '',
-                  }"
-                >
+                <div class="block">
                   <label class="option">
                     <span>{{ option.name }}</span>
                     <input
@@ -132,9 +125,7 @@
             <div class="progress-mask"></div>
           </div>
         </div>
-        <button type="submit" class="btn btn-submit" @click="submitForm">
-          Submit
-        </button>
+        <button type="submit" class="btn btn-submit">Submit</button>
       </div>
     </div>
   </form>
@@ -183,46 +174,31 @@ export default {
           id: 6,
           name: "Marketing",
         },
-        {
-          id: 7,
-          name: "Copywriting",
-        },
-        {
-          id: 8,
-          name: "Advisory",
-        },
-        {
-          id: 9,
-          name: "Compositing",
-        },
       ],
     };
   },
   methods: {
-    submitForm() {
-      console.log(this.quiz);
-    },
     onSubmit() {
       console.log(this.quiz);
-      if (this.quiz.fullName.length < 6 || this.quiz.fullName.length > 18) {
-        this.error = {
-          text: "Look failed! Full Name should be 6-18 characters.",
-          status: true,
-        };
-      } else if (
-        this.quiz.fullName.length > 5 &&
-        this.quiz.fullName.length < 19
-      ) {
-        this.success = {
-          text: "Look great!",
-          status: true,
-        };
-      } else {
-        this.error = {
-          text: "",
-          status: false,
-        };
-      }
+      // if (this.quiz.fullName.length < 6 || this.quiz.fullName.length > 18) {
+      //   this.error = {
+      //     text: "Look failed! Full Name should be 6-18 characters.",
+      //     status: true,
+      //   };
+      // } else if (
+      //   this.quiz.fullName.length > 5 &&
+      //   this.quiz.fullName.length < 19
+      // ) {
+      //   this.success = {
+      //     text: "Look great!",
+      //     status: true,
+      //   };
+      // } else {
+      //   this.error = {
+      //     text: "",
+      //     status: false,
+      //   };
+      // }
     },
   },
 };
