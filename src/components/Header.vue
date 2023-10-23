@@ -1,8 +1,13 @@
 <template>
-  <div :class="{ 'bg-purple': theme === 'contact' }" @click="closeHeader">
+  <div :class="{ 'bg-purple': theme === 'contact' }" @click.self="closeHeader">
     <h1 class="header">this is header component</h1>
     <h2>{{ menu }}</h2>
     <h3>{{ content }}</h3>
+    <div>
+      <slot name="header"></slot>
+      <slot></slot>
+      <slot name="footer"></slot>
+    </div>
   </div>
 </template>
 
