@@ -1,9 +1,9 @@
 <template>
-  <h1 class="header" :class="{ 'bg-purple': theme === 'contact' }">
-    this is header component
-  </h1>
-  <h2>{{ menu }}</h2>
-  <h3>{{ content }}</h3>
+  <div :class="{ 'bg-purple': theme === 'contact' }" @click="closeHeader">
+    <h1 class="header">this is header component</h1>
+    <h2>{{ menu }}</h2>
+    <h3>{{ content }}</h3>
+  </div>
 </template>
 
 <script>
@@ -28,6 +28,11 @@ export default {
   },
   data() {
     return {};
+  },
+  methods: {
+    closeHeader() {
+      this.$emit("cancel");
+    },
   },
 };
 </script>
