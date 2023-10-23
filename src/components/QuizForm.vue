@@ -132,7 +132,9 @@
             <div class="progress-mask"></div>
           </div>
         </div>
-        <button type="submit" class="btn btn-submit">Submit</button>
+        <button type="submit" class="btn btn-submit" @click="submitForm">
+          Submit
+        </button>
       </div>
     </div>
   </form>
@@ -197,6 +199,9 @@ export default {
     };
   },
   methods: {
+    submitForm() {
+      console.log(this.quiz);
+    },
     onSubmit() {
       console.log(this.quiz);
       if (this.quiz.fullName.length < 6 || this.quiz.fullName.length > 18) {
